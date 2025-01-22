@@ -18,6 +18,27 @@ MainWindow::MainWindow(QWidget *parent) :
     applicationPath("C:/Programmation/test/sans_titre.exe")  // path to the app
 {
     ui->setupUi(this);
+    ui->centralWidget->setStyleSheet(
+        "QWidget#centralWidget {"
+        "   border: none;"
+        "}"
+        );
+    ui->statusLabel->setStyleSheet("QLabel { color: white; }");
+    ui->progressBar->setStyleSheet("QProgressBar { color: white; }");
+    ui->launchButton->setStyleSheet(
+        "QPushButton {"
+        "   background-color: rgba(0, 0, 0, 100);"
+        "   color: white;"
+        "   border-radius: 15px;"
+        "   padding: 5px;"
+        "}"
+        "QPushButton:hover {"
+        "   background-color: rgba(255, 255, 255, 50);"
+        "}"
+        );
+    QPixmap currentPixmap = ui->wallpapperLabel->pixmap();
+    QPixmap newPixmap = currentPixmap.scaled(300, 200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ui->wallpapperLabel->setPixmap(newPixmap);
 
     // simple user interface configuration
     ui->statusLabel->setText("Vérification des mises à jour...");

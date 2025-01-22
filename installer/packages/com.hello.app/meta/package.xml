@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>Application principale</DisplayName>
+    <Description>Installation des composants principaux</Description>
+    <Version>1.0.0</Version>
+    <ReleaseDate>2025-01-21</ReleaseDate>
+    <Default>true</Default>
+    <Script>installscript.qs</Script>
+</Package>

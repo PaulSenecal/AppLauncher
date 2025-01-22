@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Launcher</Name>
+    <Version>1.0.0</Version>
+    <Title>Installation du launcher</Title>
+    <Publisher>senecal</Publisher>
+    <StartMenuDir>Launcher</StartMenuDir>
+    <TargetDir>@ApplicationsDir@/launcherByPaulz</TargetDir>
+</Installer>
