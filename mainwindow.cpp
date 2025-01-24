@@ -87,6 +87,7 @@ void MainWindow::handleUpdateCheck(QNetworkReply *reply)
             downloadUpdate();
         } else {
             ui->progressBar->setValue(100);
+            ui->versionLabel->setText("Version: " + currentVersion);
             ui->statusLabel->setText("Application à jour");
             ui->launchButton->setEnabled(true);
         }
