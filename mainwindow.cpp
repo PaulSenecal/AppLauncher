@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     networkManager(new QNetworkAccessManager(this)),
     //currentVersion("0.0.1"),
 
-    applicationPath(QDir::homePath() + TARGET_PATH + "/" + EXE_NAME)  // Chemin complet
+    applicationPath(QCoreApplication::applicationDirPath() + TARGET_PATH + "/" + EXE_NAME)
 {
     ui->setupUi(this);
     verifyAndCreateDirforApp();  // Créer le dossier dès le démarrage
@@ -45,7 +45,7 @@ void MainWindow::verifyLocalCurrentVersionFile()
 }
 void MainWindow::verifyAndCreateDirforApp()
 {
-    QString appDirPath = QDir::homePath() + "/Application";
+    QString appDirPath = QCoreApplication::applicationDirPath() + "/Application";
     QDir appDir(appDirPath);
     if (!appDir.exists()) {
         if (appDir.mkpath(appDirPath)) {
