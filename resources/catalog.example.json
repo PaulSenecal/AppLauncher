@@ -1,0 +1,6 @@
+{
+  "games": [
+    { "id": "stargate", "name": "Stargate", "path": "games/stargate/", "exe": "stargate", "icon": "icons/stargate.png" },
+    { "id": "avalon",   "name": "Avalon",   "path": "games/avalon/",   "exe": "avalon",   "icon": "icons/avalon.png" }
+  ]
+}
