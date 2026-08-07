@@ -10,10 +10,10 @@
 #include <utility>
 
 GameManager::GameManager(GameInfo game, NetworkClient *network,
-                         ManifestAuthenticator *verifier, const QString &serverBaseUrl,
-                         QObject *parent)
+                          ManifestAuthenticator *verifier, const QString &serverBaseUrl,
+                          QObject *parent)
     : QObject(parent), m_game(std::move(game)), m_network(network),
-    m_verifier(verifier), m_serverBaseUrl(serverBaseUrl)
+      m_verifier(verifier), m_serverBaseUrl(serverBaseUrl)
 {
     m_game.installDir = PlatformUtils::gamesRootDir() + "/" + m_game.id;
     QDir().mkpath(m_game.installDir);
@@ -64,7 +64,7 @@ void GameManager::checkForUpdate()
         m_diff = computeDiff(m_localManifest, m_remoteManifest);
 
         const bool updateAvailable = !m_diff.isEmpty()
-                                     && m_remoteManifest.version != m_game.localVersion;
+            && m_remoteManifest.version != m_game.localVersion;
         emit checkFinished(updateAvailable, QString());
     });
 }
@@ -122,9 +122,9 @@ void GameManager::downloadNextFile()
 
     connect(reply, &QNetworkReply::downloadProgress, this,
             [this, file](qint64 received, qint64 total) {
-                Q_UNUSED(total);
-                emit progressChanged(m_bytesReceivedTotal + received, m_diff.totalBytes, file.path);
-            });
+        Q_UNUSED(total);
+        emit progressChanged(m_bytesReceivedTotal + received, m_diff.totalBytes, file.path);
+    });
 
     connect(reply, &QNetworkReply::finished, this, [this, reply, file]() {
         reply->deleteLater();
@@ -225,7 +225,7 @@ bool GameManager::launch()
     if (!m_game.isInstalled()) return false;
 
     const QString exePath = m_game.installDir + "/"
-                            + PlatformUtils::executableName(m_game.exeBaseName);
+        + PlatformUtils::executableName(m_game.exeBaseName);
     if (!QFile::exists(exePath)) return false;
 
     m_runLock.reset(new QLockFile(lockFilePath()));

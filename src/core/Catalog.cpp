@@ -28,6 +28,8 @@ void Catalog::fetch()
             g.serverPath = o.value("path").toString();
             g.exeBaseName = o.value("exe").toString();
             g.iconUrl = o.value("icon").toString();
+            g.forumUrl = o.value("forumUrl").toString();
+            g.patchNotesUrl = o.value("patchNotesUrl").toString();
             if (!g.id.isEmpty()) games << g;
         }
         emit fetched(games, QString());

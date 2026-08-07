@@ -8,6 +8,8 @@ struct GameInfo {
     QString name;             // nom affiché, ex: "Stargate"
     QString serverPath;       // chemin relatif sur le serveur, ex: "games/stargate/"
     QString iconUrl;          // icône à afficher dans la liste (optionnel)
+    QString forumUrl;         // lien "Forum" (optionnel)
+    QString patchNotesUrl;    // lien "Patch Notes" externe (optionnel, sinon on montre le changelog du manifest)
 
     // Nom de l'exécutable SANS extension - l'extension est résolue par plateforme
     // (voir PlatformUtils::executableName)

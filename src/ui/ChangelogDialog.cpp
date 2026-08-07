@@ -6,7 +6,7 @@
 #include <QTextEdit>
 
 ChangelogDialog::ChangelogDialog(const QString &gameName, const QString &newVersion,
-                                 const QStringList &changelog, QWidget *parent)
+                                  const QStringList &changelog, QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle("Mise à jour disponible");

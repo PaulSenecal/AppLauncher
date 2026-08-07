@@ -1,8 +1,9 @@
 <RCC>
-    <qresource prefix="/">
-        <!-- Ajoute ici tes icônes/ressources embarquées si besoin,
-             ex: <file>resources/icons/stargate.png</file>
-             Vide pour l'instant : les icônes de jeux sont chargées
-             dynamiquement depuis iconUrl (Catalog), pas embarquées. -->
+    <qresource prefix="/news">
+        <file>resources/Rcs/logoVideoGames.png</file>
+        <file>resources/Rcs/mainNews.png</file>
+        <file>resources/Rcs/new1.png</file>
+        <file>resources/Rcs/new2.png</file>
+        <file>resources/Rcs/new3.png</file>
     </qresource>
 </RCC>
